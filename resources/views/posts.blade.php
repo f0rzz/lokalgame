@@ -32,7 +32,7 @@
                 <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700
                 flex flex-col lg:flex-row lg:space-x-6">
                     <a href="/posts/{{ $post['slug'] }}">
-                        <img class="rounded-base h-auto lg:max-w-xl" src="{{ 'storage/' . $post['cover'] }}" />
+                        <img class="rounded-base h-auto lg:max-w-xl" src="{{ $post['cover'] }}" />
                     </a>
                 <div class="flex flex-col justify-between lg:w-1/2">
                     <div class="flex justify-between items-center mb-5 text-gray-500">
