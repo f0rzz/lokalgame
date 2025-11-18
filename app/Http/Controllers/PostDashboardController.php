@@ -59,7 +59,7 @@ class PostDashboardController extends Controller
         ])->validate();
 
         $newFileName = Str::after($request->cover, 'tmp/');
-        Storage::disk('public')->move($request->cover, 'covers/' . $newFileName);
+        Storage::disk(config('filesystems.default_public_disk'))->move($request->cover, 'covers/' . $newFileName);
 
         Post::create([
             'title' => $request->title,
@@ -76,7 +76,7 @@ class PostDashboardController extends Controller
     public function uploadcover(Request $request)
     {
         if ($request->hasFile('cover')) {
-            $path = $request->file('cover')->store('tmp', 'public');
+            $path = $request->file('cover')->store('tmp', config('filesystems.default_public_disk'));
         }
         return $path;
     }
