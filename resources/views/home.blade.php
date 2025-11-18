@@ -62,7 +62,7 @@
         @foreach ( $reviewspost as $post )
         <div class="rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72">
             <a href="/posts/{{ $post['slug'] }}">
-                <img class="rounded-base h-full object-cover " src="{{ 'storage/' . $post['cover'] }}" />
+                <img class="rounded-base h-full object-cover " src="{{ $post['cover'] }}" />
             </a>
         </div>
         @endforeach
