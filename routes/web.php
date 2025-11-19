@@ -7,7 +7,7 @@ use App\Http\Controllers\PostDashboardController;
 
 Route::get('/', function () {
     $newsPost = Post::with('category')->filter(['category' => 'news'])->latest()->take(4)->get();
-    $reviewsPost = Post::with('category')->filter(['category' => 'reviews'])->latest()->take(4)->get();
+    $reviewsPost = Post::with('category')->filter(['category' => 'reviews'])->latest()->take(3)->get();
 
     return view('home', ['title' => 'Home Page', 'newspost' => $newsPost, 'reviewspost' => $reviewsPost]);
 });
