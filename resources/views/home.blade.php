@@ -49,7 +49,7 @@
         @foreach ( $newspost as $post ) 
         <div class="rounded-lg h-64 md:h-75">
             <a href="/posts/{{ $post['slug'] }}">
-                <img class="rounded-base h-full object-cover " src="{{ $post['cover'] }}" />
+                <img class="rounded-base h-full object-cover " src="{{ 'storage/' . $post['cover'] }}" />
             </a>
         </div>
         @endforeach
